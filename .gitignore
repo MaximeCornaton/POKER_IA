@@ -19,3 +19,4 @@ config/
 # D'autres fichiers sensibles ou spécifiques au système
 .DS_Store
 Thumbs.db
+.dist

@@ -1,6 +1,6 @@
 from agent.agent import Agent
 from environment.environment import Environment
-from config_loader import load_config
+from utils.config_loader import load_config
 
 
 def main():
@@ -28,10 +28,11 @@ def main():
 
     # Boucle sur les épisodes
     for episode in range(num_episodes):
+        environment.init_game()
         environment.play_game()
-        states, actions, rewards = environment.get_data()
-        agent.train(states, actions, rewards)
-        environment.reset()
+        print(environment)
+        # states, actions, rewards = environment.get_data()
+        # agent.train(states, actions, rewards)
 
 
 if __name__ == "__main__":
