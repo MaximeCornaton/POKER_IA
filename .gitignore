@@ -1,0 +1,21 @@
+# Fichiers générés par Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Fichiers générés par des éditeurs
+*.swp
+.vscode/
+
+# Environnement virtuel
+venv/
+
+# Fichiers sensibles et de configuration (par exemple, les clés d'API)
+config/
+
+# Fichiers d'authentification Spotify
+.cache*
+
+# D'autres fichiers sensibles ou spécifiques au système
+.DS_Store
+Thumbs.db

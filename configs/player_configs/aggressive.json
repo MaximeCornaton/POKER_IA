@@ -1,0 +1,7 @@
+{
+  "strategy_type": "aggressive",
+  "bet_threshold": 0.7,
+  "fold_threshold": 0.3,
+  "min_bet_amount": 20,
+  "max_bet_amount": 100
+}
