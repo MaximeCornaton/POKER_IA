@@ -1,6 +1,7 @@
 import torch
 import numpy as np
-from model.model import NeuralNetwork
+# Assurez-vous que NeuralNetwork est correctement importé
+from model.cModel import NeuralNetwork
 import torch.optim as optim
 
 
@@ -10,7 +11,9 @@ class Agent:
         self.optimizer = optim.Adam(self.model.parameters(), lr=learning_rate)
 
     def preprocess_state(self, game_state):
-        # Preprocess the game state to a format suitable for the model
+        # Prétraitement de l'état du jeu, convertissez-le en format approprié pour le modèle
+        # Par exemple, vous pouvez convertir les données en tenseur PyTorch
+        # Remplacez cette partie par votre propre logique de prétraitement
         return np.array([...])
 
     def make_decision(self, game_state):
@@ -18,18 +21,18 @@ class Agent:
         input_data = torch.tensor(state, dtype=torch.float32)
         output = self.model(input_data)
 
-        # Process the output to decide on an action
+        # Traitez la sortie pour décider d'une action
         decision, amount = self.process_output(output)
         return decision, amount
 
     def process_output(self, output):
-        # Process the model's output to decide on an action
+        # Traitez la sortie du modèle pour décider d'une action
+        # Par exemple, utilisez softmax pour calculer les probabilités et choisissez l'action avec la probabilité la plus élevée
         probabilities = torch.softmax(output, dim=-1)
         action = torch.argmax(probabilities)
-        return action.item()  # Return the action as an integer
+        return action.item()  # Renvoyez l'action sous forme d'entier
 
     def train(self, states, actions, rewards):
-        # Train the model using the collected states, actions, and rewards
         states_tensor = torch.tensor(states, dtype=torch.float32)
         actions_tensor = torch.tensor(actions, dtype=torch.int64)
         rewards_tensor = torch.tensor(rewards, dtype=torch.float32)

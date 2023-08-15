@@ -1,5 +1,5 @@
-from agent.agent import Agent
-from environment.environment import Environment
+from agent.cAgent import Agent
+from environment.cPokerGame import Environment
 from utils.config_loader import load_config
 
 
@@ -28,11 +28,10 @@ def main():
 
     # Boucle sur les épisodes
     for episode in range(num_episodes):
-        environment.init_game()
+        environment.init_game(agent=agent)
         environment.play_game()
-        print(environment)
-        # states, actions, rewards = environment.get_data()
-        # agent.train(states, actions, rewards)
+        states, actions, rewards = environment.get_history()
+        agent.train(states, actions, rewards)
 
 
 if __name__ == "__main__":
