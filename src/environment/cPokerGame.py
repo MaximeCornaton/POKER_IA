@@ -5,7 +5,7 @@ import random
 from environment.cPlayer import Player
 from environment.cHandEvaluator import HandEvaluator
 from environment.cHistory import History
-from environment.cPlayerAction import PlayerAction
+from environment.ePlayerAction import PlayerAction
 
 
 class PokerGame:
@@ -73,8 +73,8 @@ class PokerGame:
 
             round_min_bet = max(round_min_bet, amount)
 
-            self.history.add(state=self.get_state(),
-                             action=decision.name, reward=0)
+            self.history.add(state=self.get_state(), player=player,
+                             action=decision, amount=amount)
 
         self.deal_community_cards(3 if round_num == 0 else 1)
         self.rotate_players()
@@ -92,48 +92,51 @@ class PokerGame:
         self.deal_cards()
         self.play_round(0)
 
-        winner_indices = self.determine_winner()
+        winners = self.determine_winner()
 
-        for i in winner_indices:
-            self.players[i].chips += self.pot / len(winner_indices)
-
-        rewards = self.calculate_rewards(winner_indices)
-
-        self.history.update_rewards(rewards)
+        for winner in winners:
+            winner.chips += self.pot / len(winners)
 
         self.history.save('data/history.json')
 
         self.reset()
 
-    def calculate_rewards(self, winner_indices):
-        rewards = [0 for _ in range(self.num_players)]
-        for i in winner_indices:
-            rewards[i] = 1
-        return rewards
+    def calculate_rewards(self, winners):
+        rewards = {
+            'action_rewards': [],
+            'game_rewards': [],
+        }
+        for player, amount in self.history.get_players_and_amounts():
+            if player in winners:
+                rewards['action_rewards'].append(amount)
+                rewards['game_rewards'].append(amount)
+            else:
+                rewards['action_rewards'].append(-amount)
+                rewards['game_rewards'].append(0)
 
     def determine_winner(self):
         hand_evaluator = HandEvaluator()
         best_hand_strength = -1
-        winning_player_indices = []
+        winning_players = []
 
-        for i, player in enumerate(self.players):
+        for player in self.players:
             hand_strength = hand_evaluator.evaluate_hand(
                 player.hand, self.community_cards)
 
             if hand_strength > best_hand_strength:
                 best_hand_strength = hand_strength
-                winning_player_indices = [i]
+                winning_players = [player]
             elif hand_strength == best_hand_strength:
                 tiebreaker_rank = hand_evaluator.tiebreaker_rank(
                     player.hand, self.community_cards)
                 winning_tiebreaker_rank = hand_evaluator.tiebreaker_rank(
-                    self.players[winning_player_indices[0]].hand, self.community_cards)
+                    winning_players[0].hand, self.community_cards)
                 if tiebreaker_rank > winning_tiebreaker_rank:
-                    winning_player_indices = [i]
+                    winning_players = [player]
                 elif tiebreaker_rank == winning_tiebreaker_rank:
-                    winning_player_indices.append(i)
+                    winning_players.append(player)
 
-        return winning_player_indices
+        return winning_players
 
     def get_state(self):
         return {

@@ -1,4 +1,4 @@
-from environment.cPlayerAction import PlayerAction
+from environment.ePlayerAction import PlayerAction
 
 
 class Player:
