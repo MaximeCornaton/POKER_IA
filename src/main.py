@@ -25,14 +25,19 @@ def main():
         max_rounds=game_config['max_rounds']
     )
 
-    # Boucle sur les épisodes
     for id in range(num_episodes):
 
         environment.init(agent=agent)
-        environment.play()
+        winners = environment.play()
 
-        # states, actions, rewards = environment.get_history()
+        print(
+            f"Episode {id} finished. Winners: {', '.join(str(winner) for winner in winners)}")
+        environment.save_history(f"history_{id}.json")
+
+        states, actions, rewards = environment.get_history()
         # agent.train(states, actions, rewards)
+
+        environment.reset()
 
 
 if __name__ == "__main__":

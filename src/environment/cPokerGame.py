@@ -34,7 +34,7 @@ class PokerGame:
             player.hand = []
 
     def generate_players(self, agent):
-        return [Player(agent=agent) for _ in range(self.num_players)]
+        return [Player(agent=agent, name="Player_"+str(_)) for _ in range(self.num_players)]
 
     def generate_deck(self):
         suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
@@ -97,22 +97,13 @@ class PokerGame:
         for winner in winners:
             winner.chips += self.pot / len(winners)
 
-        self.history.save('data/history.json')
+        return winners
 
-        self.reset()
+    def save_history(self, path):
+        self.history.save(path)
 
-    def calculate_rewards(self, winners):
-        rewards = {
-            'action_rewards': [],
-            'game_rewards': [],
-        }
-        for player, amount in self.history.get_players_and_amounts():
-            if player in winners:
-                rewards['action_rewards'].append(amount)
-                rewards['game_rewards'].append(amount)
-            else:
-                rewards['action_rewards'].append(-amount)
-                rewards['game_rewards'].append(0)
+    def get_history(self):
+        return self.history.get()
 
     def determine_winner(self):
         hand_evaluator = HandEvaluator()

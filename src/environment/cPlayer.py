@@ -2,8 +2,10 @@ from environment.ePlayerAction import PlayerAction
 
 
 class Player:
-    def __init__(self, agent, chips=1000):
+    def __init__(self, agent, name="Player 1", chips=1000):
         self.agent = agent
+
+        self.name = name
 
         self.chips = chips
         self.hand = []
@@ -22,4 +24,4 @@ class Player:
         self.chips -= amount
 
     def __str__(self):
-        return f"Chips: {self.chips}\nHand: {self.hand}"
+        return f"{self.name}"

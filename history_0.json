@@ -1,0 +1,2506 @@
+{
+  "states": [
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        990,
+        980,
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        990,
+        980,
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        990,
+        980,
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        990,
+        980,
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        990,
+        980,
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        990,
+        980,
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ],
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        980,
+        1000,
+        1000,
+        1000,
+        1000,
+        990
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ],
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        980,
+        1000,
+        1000,
+        1000,
+        1000,
+        990
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ],
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        980,
+        1000,
+        1000,
+        1000,
+        1000,
+        990
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ],
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        980,
+        1000,
+        1000,
+        1000,
+        1000,
+        990
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ],
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        980,
+        1000,
+        1000,
+        1000,
+        1000,
+        990
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ],
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        980,
+        1000,
+        1000,
+        1000,
+        1000,
+        990
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ],
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        1000,
+        1000,
+        1000,
+        1000,
+        990,
+        980
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ],
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        1000,
+        1000,
+        1000,
+        1000,
+        990,
+        980
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ],
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        1000,
+        1000,
+        1000,
+        1000,
+        990,
+        980
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ],
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        1000,
+        1000,
+        1000,
+        1000,
+        990,
+        980
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ],
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        1000,
+        1000,
+        1000,
+        1000,
+        990,
+        980
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ],
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        1000,
+        1000,
+        1000,
+        1000,
+        990,
+        980
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ],
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        1000,
+        1000,
+        1000,
+        990,
+        980,
+        1000
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ],
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        1000,
+        1000,
+        1000,
+        990,
+        980,
+        1000
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ],
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        1000,
+        1000,
+        1000,
+        990,
+        980,
+        1000
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ],
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        1000,
+        1000,
+        1000,
+        990,
+        980,
+        1000
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ],
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        1000,
+        1000,
+        1000,
+        990,
+        980,
+        1000
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    },
+    {
+      "player_hands": [
+        [
+          {
+            "suit": "Clubs",
+            "value": "8"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "7"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "3"
+          },
+          {
+            "suit": "Hearts",
+            "value": "Queen"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "5"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "2"
+          }
+        ],
+        [
+          {
+            "suit": "Spades",
+            "value": "2"
+          },
+          {
+            "suit": "Diamonds",
+            "value": "10"
+          }
+        ],
+        [
+          {
+            "suit": "Hearts",
+            "value": "Jack"
+          },
+          {
+            "suit": "Spades",
+            "value": "8"
+          }
+        ],
+        [
+          {
+            "suit": "Clubs",
+            "value": "7"
+          },
+          {
+            "suit": "Hearts",
+            "value": "7"
+          }
+        ]
+      ],
+      "community_cards": [
+        {
+          "suit": "Clubs",
+          "value": "4"
+        },
+        {
+          "suit": "Hearts",
+          "value": "Ace"
+        },
+        {
+          "suit": "Diamonds",
+          "value": "8"
+        },
+        {
+          "suit": "Spades",
+          "value": "7"
+        },
+        {
+          "suit": "Spades",
+          "value": "10"
+        },
+        {
+          "suit": "Spades",
+          "value": "3"
+        }
+      ],
+      "player_stacks": [
+        1000,
+        1000,
+        1000,
+        990,
+        980,
+        1000
+      ],
+      "pot": 30,
+      "small_blind": 10,
+      "big_blind": 20
+    }
+  ],
+  "player": [
+    "Player_0",
+    "Player_1",
+    "Player_2",
+    "Player_3",
+    "Player_4",
+    "Player_5",
+    "Player_1",
+    "Player_2",
+    "Player_3",
+    "Player_4",
+    "Player_5",
+    "Player_0",
+    "Player_2",
+    "Player_3",
+    "Player_4",
+    "Player_5",
+    "Player_0",
+    "Player_1",
+    "Player_3",
+    "Player_4",
+    "Player_5",
+    "Player_0",
+    "Player_1",
+    "Player_2"
+  ],
+  "actions": [
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK",
+    "CHECK"
+  ],
+  "amounts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ]
+}
