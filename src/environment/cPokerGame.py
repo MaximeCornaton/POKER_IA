@@ -4,7 +4,7 @@ import random
 from environment.cHandEvaluator import HandEvaluator
 
 
-class Environment:
+class PokerGame:
     def __init__(self, num_players, starting_stack, small_blind, big_blind, max_rounds):
 
         self.num_players = num_players
@@ -16,11 +16,18 @@ class Environment:
         self.max_rounds = max_rounds
 
     def init_game(self, agent):
-        self.history = {'states': [], 'actions': [], 'rewards': []}
-        self.deck = self.generate_deck()
+        self.reset()
         self.players = self.generate_players(agent)
+        self.history = {
+            'states': [],
+            'actions': [],
+            'rewards': []
+        }
+
+    def reset(self):
         self.pot = 0
         self.community_cards = []
+        self.deck = self.generate_deck()
 
     def generate_players(self, agent):
         return [Player(agent=agent, chips=self.starting_stack) for _ in range(self.num_players)]
@@ -52,26 +59,42 @@ class Environment:
             if decision == 'bet':
                 player.bet(amount)
                 self.pot += amount
+            self.add_to_history(self.get_state(), decision, 0)
 
         self.deal_community_cards(3 if round_num == 0 else 1)
         self.play_round(round_num + 1)
 
-    def play_game(self):
+    def play_hand(self):
         self.deal_cards()
         self.play_round(0)
 
-        winner = self.determine_winner()
-        for player in self.players:
-            if player == winner:
-                reward = 1.0
-            else:
-                reward = -1.0
-            player.reward = reward
+        winner_indices = self.determine_winner()
+
+        for i in winner_indices:
+            self.players[i].chips += self.pot / len(winner_indices)
+
+        rewards = self.calculate_rewards(winner_indices)
+
+        self.uptade_history_reward(rewards)
+
+        self.reset()
+
+    def play_game(self, num_hands=1):
+        for _ in range(num_hands):
+            self.play_hand()
+
+        print(self.history)
+
+    def calculate_rewards(self, winner_indices):
+        rewards = [0 for _ in range(self.num_players)]
+        for i in winner_indices:
+            rewards[i] = 1
+        return rewards
 
     def determine_winner(self):
         hand_evaluator = HandEvaluator()
         best_hand_strength = -1
-        winning_player_index = -1
+        winning_player_indices = []
 
         for i, player in enumerate(self.players):
             hand_strength = hand_evaluator.evaluate_hand(
@@ -79,18 +102,18 @@ class Environment:
 
             if hand_strength > best_hand_strength:
                 best_hand_strength = hand_strength
-                winning_player_index = i
+                winning_player_indices = [i]
+            elif hand_strength == best_hand_strength:
+                winning_player_indices.append(i)
 
-        return winning_player_index
+        return winning_player_indices
 
     def get_state(self):
         return {
             'player_hands': [player.hand for player in self.players],
             'community_cards': self.community_cards,
             'player_stacks': [player.chips for player in self.players],
-            # 'current_player_index': self.current_player_index,
             'pot': self.pot,
-            # 'current_bets': [player.current_bet for player in self.players],
             'small_blind': self.small_blind,
             'big_blind': self.big_blind,
         }
@@ -103,8 +126,11 @@ class Environment:
         self.history['actions'].append(action)
         self.history['rewards'].append(reward)
 
-    def save_history(self, filename):
-        with open(filename, 'w') as f:
+    def uptade_history_reward(self, reward):
+        self.history['rewards'] = reward
+
+    def save_history(self, path):
+        with open(path, 'w') as f:
             json.dump(self.history, f)
 
     def __str__(self):
@@ -120,7 +146,8 @@ class Player:
 
     def make_decision(self, env):
         state = env.get_state()
-        return self.agent.make_decision(state)
+        # return self.agent.make_decision(state)
+        return "bet", 10
 
     def bet(self, amount):
         self.chips -= amount

@@ -1,5 +1,5 @@
 from agent.cAgent import Agent
-from environment.cPokerGame import Environment
+from environment.cPokerGame import PokerGame
 from utils.config_loader import load_config
 
 
@@ -18,7 +18,7 @@ def main():
     )
 
     # Création de l'environnement
-    environment = Environment(
+    environment = PokerGame(
         num_players=game_config['num_players'],
         starting_stack=game_config['starting_stack'],
         small_blind=game_config['small_blind'],
@@ -28,10 +28,12 @@ def main():
 
     # Boucle sur les épisodes
     for episode in range(num_episodes):
+
         environment.init_game(agent=agent)
         environment.play_game()
-        states, actions, rewards = environment.get_history()
-        agent.train(states, actions, rewards)
+
+        # states, actions, rewards = environment.get_history()
+        # agent.train(states, actions, rewards)
 
 
 if __name__ == "__main__":
