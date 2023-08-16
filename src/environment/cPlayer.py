@@ -1,3 +1,6 @@
+from environment.cPlayerAction import PlayerAction
+
+
 class Player:
     def __init__(self, agent, chips=1000):
         self.agent = agent
@@ -5,10 +8,15 @@ class Player:
         self.chips = chips
         self.hand = []
 
-    def make_decision(self, env):
+    def make_decision(self, env, min_bet):
+        if self.chips == 0:
+            return PlayerAction.FOLD, 0
+        if self.chips < min_bet:
+            return PlayerAction.ALL_IN, self.chips
+
         state = env.get_state()
         # return self.agent.make_decision(state)
-        return "bet", 10
+        return PlayerAction.CHECK, 0
 
     def bet(self, amount):
         self.chips -= amount

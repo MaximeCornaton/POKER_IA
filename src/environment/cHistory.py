@@ -25,4 +25,4 @@ class History:
 
     def save(self, path):
         with open(path, 'w') as f:
-            json.dump(self.history, f)
+            json.dump(self.history, f, indent=2)

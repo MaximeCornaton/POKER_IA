@@ -5,6 +5,7 @@ import random
 from environment.cPlayer import Player
 from environment.cHandEvaluator import HandEvaluator
 from environment.cHistory import History
+from environment.cPlayerAction import PlayerAction
 
 
 class PokerGame:
@@ -54,18 +55,38 @@ class PokerGame:
         if round_num == self.max_rounds:
             return
 
-        for player in self.players:
+        round_min_bet = 0
 
-            decision, amount = player.make_decision(self)
-            if decision == 'fold':
-                continue
-            if decision == 'bet':
+        if round_num == 0:
+            self.blind_bets()
+
+        for i, player in enumerate(self.players):
+
+            player_min_bet = self.small_blind if i == 0 and round_num == 0 else self.big_blind if i == 1 and round_num == 0 else round_min_bet
+
+            decision, amount = player.make_decision(
+                env=self, min_bet=player_min_bet)
+
+            if decision in [PlayerAction.CALL, PlayerAction.BET, PlayerAction.RAISE, PlayerAction.ALL_IN]:
                 player.bet(amount)
                 self.pot += amount
-            self.history.add(state=self.get_state(), action=decision, reward=0)
+
+            round_min_bet = max(round_min_bet, amount)
+
+            self.history.add(state=self.get_state(),
+                             action=decision.name, reward=0)
 
         self.deal_community_cards(3 if round_num == 0 else 1)
+        self.rotate_players()
         self.play_round(round_num + 1)
+
+    def blind_bets(self):
+        self.players[0].bet(self.small_blind)
+        self.players[1].bet(self.big_blind)
+        self.pot += self.small_blind + self.big_blind
+
+    def rotate_players(self):
+        self.players = self.players[1:] + self.players[:1]
 
     def play(self):
         self.deal_cards()
@@ -79,6 +100,8 @@ class PokerGame:
         rewards = self.calculate_rewards(winner_indices)
 
         self.history.update_rewards(rewards)
+
+        self.history.save('data/history.json')
 
         self.reset()
 
@@ -101,7 +124,14 @@ class PokerGame:
                 best_hand_strength = hand_strength
                 winning_player_indices = [i]
             elif hand_strength == best_hand_strength:
-                winning_player_indices.append(i)
+                tiebreaker_rank = hand_evaluator.tiebreaker_rank(
+                    player.hand, self.community_cards)
+                winning_tiebreaker_rank = hand_evaluator.tiebreaker_rank(
+                    self.players[winning_player_indices[0]].hand, self.community_cards)
+                if tiebreaker_rank > winning_tiebreaker_rank:
+                    winning_player_indices = [i]
+                elif tiebreaker_rank == winning_tiebreaker_rank:
+                    winning_player_indices.append(i)
 
         return winning_player_indices
 

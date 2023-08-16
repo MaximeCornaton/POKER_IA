@@ -15,7 +15,7 @@ class HandEvaluator:
 
     def evaluate_hand(self, hand, community_cards):
         all_cards = hand + community_cards
-        all_cards.sort(key=lambda card: card['value'])
+        all_cards.sort(key=lambda card: self.card_value_key(card['value']))
 
         for method_name in self.hand_rankings:
             method = getattr(
@@ -24,6 +24,26 @@ class HandEvaluator:
                 return self.hand_rankings[method_name]
 
         return self.hand_rankings["High Card"]
+
+    def tiebreaker_rank(self, hand, community_cards):
+        all_cards = hand + community_cards
+        all_cards.sort(key=lambda card: self.card_value_key(card['value']))
+
+        value_counts = self.get_value_counts(all_cards)
+        sorted_values = sorted(value_counts.keys(), key=lambda value: (
+            value_counts[value], self.card_value_key(value)), reverse=True)
+
+        tiebreaker_rank = 0
+        for value in sorted_values:
+            tiebreaker_rank = tiebreaker_rank * 13 + self.card_value_key(value)
+
+        return tiebreaker_rank
+
+    def card_value_key(self, value):
+        # Define the custom order of card values
+        value_order = ["2", "3", "4", "5", "6", "7", "8",
+                       "9", "10", "Jack", "Queen", "King", "Ace"]
+        return value_order.index(value)
 
     def is_royal_flush(self, cards):
         return self.is_straight_flush(cards) and self.has_ace_high(cards)
@@ -48,9 +68,13 @@ class HandEvaluator:
             return False
 
         values = sorted(set(card['value'] for card in cards))
+        # Check for regular straight
         for i in range(len(values) - 4):
             if values[i] == values[i + 4]:
                 return True
+        # Check for A-2-3-4-5 straight
+        if 'Ace' in values and '2' in values and '3' in values and '4' in values and '5' in values:
+            return True
         return False
 
     def is_three_of_a_kind(self, cards):
@@ -75,10 +99,6 @@ class HandEvaluator:
 
     def has_ace_high(self, cards):
         return any(card['value'] == 'Ace' for card in cards)
-
-    def tiebreaker_rank(self, hand, community_cards):
-        all_cards = hand + community_cards
-        all_cards.sort(key=lambda card: card['value'], reverse=True)
 
 
 if __name__ == "__main__":
