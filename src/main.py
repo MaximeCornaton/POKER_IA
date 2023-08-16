@@ -20,17 +20,16 @@ def main():
     # Création de l'environnement
     environment = PokerGame(
         num_players=game_config['num_players'],
-        starting_stack=game_config['starting_stack'],
         small_blind=game_config['small_blind'],
         big_blind=game_config['big_blind'],
         max_rounds=game_config['max_rounds']
     )
 
     # Boucle sur les épisodes
-    for episode in range(num_episodes):
+    for id in range(num_episodes):
 
-        environment.init_game(agent=agent)
-        environment.play_game()
+        environment.init(agent=agent)
+        environment.play()
 
         # states, actions, rewards = environment.get_history()
         # agent.train(states, actions, rewards)

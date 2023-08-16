@@ -2,35 +2,36 @@ import json
 import random
 
 from environment.cHandEvaluator import HandEvaluator
+from environment.cHistory import History
 
 
 class PokerGame:
-    def __init__(self, num_players, starting_stack, small_blind, big_blind, max_rounds):
-
+    def __init__(self, num_players, small_blind, big_blind, max_rounds):
         self.num_players = num_players
-        self.starting_stack = starting_stack
 
         self.small_blind = small_blind
         self.big_blind = big_blind
 
         self.max_rounds = max_rounds
 
-    def init_game(self, agent):
-        self.reset()
+    def init(self, agent):
         self.players = self.generate_players(agent)
-        self.history = {
-            'states': [],
-            'actions': [],
-            'rewards': []
-        }
+        self.history = History()
+        self.reset()
 
     def reset(self):
         self.pot = 0
         self.community_cards = []
         self.deck = self.generate_deck()
+        self.reset_players_hands()
+        self.history.reset()
+
+    def reset_players_hands(self):
+        for player in self.players:
+            player.hand = []
 
     def generate_players(self, agent):
-        return [Player(agent=agent, chips=self.starting_stack) for _ in range(self.num_players)]
+        return [Player(agent=agent) for _ in range(self.num_players)]
 
     def generate_deck(self):
         suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
@@ -59,12 +60,12 @@ class PokerGame:
             if decision == 'bet':
                 player.bet(amount)
                 self.pot += amount
-            self.add_to_history(self.get_state(), decision, 0)
+            self.history.add(state=self.get_state(), action=decision, reward=0)
 
         self.deal_community_cards(3 if round_num == 0 else 1)
         self.play_round(round_num + 1)
 
-    def play_hand(self):
+    def play(self):
         self.deal_cards()
         self.play_round(0)
 
@@ -75,15 +76,9 @@ class PokerGame:
 
         rewards = self.calculate_rewards(winner_indices)
 
-        self.uptade_history_reward(rewards)
+        self.history.update_rewards(rewards)
 
         self.reset()
-
-    def play_game(self, num_hands=1):
-        for _ in range(num_hands):
-            self.play_hand()
-
-        print(self.history)
 
     def calculate_rewards(self, winner_indices):
         rewards = [0 for _ in range(self.num_players)]
@@ -118,27 +113,12 @@ class PokerGame:
             'big_blind': self.big_blind,
         }
 
-    def get_history(self):
-        return self.history['states'], self.history['actions'], self.history['rewards']
-
-    def add_to_history(self, state, action, reward):
-        self.history['states'].append(state)
-        self.history['actions'].append(action)
-        self.history['rewards'].append(reward)
-
-    def uptade_history_reward(self, reward):
-        self.history['rewards'] = reward
-
-    def save_history(self, path):
-        with open(path, 'w') as f:
-            json.dump(self.history, f)
-
     def __str__(self):
         return f"Players: {self.players}\nPot: {self.pot}\nCommunity Cards: {self.community_cards}"
 
 
 class Player:
-    def __init__(self, agent, chips):
+    def __init__(self, agent, chips=1000):
         self.agent = agent
 
         self.chips = chips

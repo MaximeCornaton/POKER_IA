@@ -1,7 +1,6 @@
 {
   "game_type": "Omaha Poker",
   "num_players": 4,
-  "starting_stack": 1500,
   "small_blind": 20,
   "big_blind": 40,
   "max_rounds": 4

@@ -1,7 +1,6 @@
 {
   "game_type": "Texas Hold'em",
   "num_players": 6,
-  "starting_stack": 1000,
   "small_blind": 10,
   "big_blind": 20,
   "max_rounds": 4
