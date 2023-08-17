@@ -1,5 +1,18 @@
+# Description: This file contains the class HandEvaluator which is used to evaluate the strength of a hand.
+# Author: Maxime Cornaton
+# Date: 2023
+
 class HandEvaluator:
-    def __init__(self):
+
+    """
+    _summary_ : Class used to evaluate the strength of a hand.
+    _description_ : This class is used to evaluate the strength of a hand.
+    _attributes_ :
+        - hand_rankings : Dictionary containing the different hand rankings.
+    _returns_ : None
+    """
+
+    def __init__(self) -> None:
         self.hand_rankings = {
             "High Card": 0,
             "One Pair": 1,
@@ -13,7 +26,16 @@ class HandEvaluator:
             "Royal Flush": 9
         }
 
-    def evaluate_hand(self, hand, community_cards):
+    """
+    _summary_ : Evaluate the strength of a hand.
+    _description_ : This method is used to evaluate the strength of a hand.
+    _attributes_ :
+        - hand : Hand of the player.    
+        - community_cards : Community cards.
+    _returns_ : Strength of the hand.
+    """
+
+    def evaluate_hand(self, hand: list, community_cards: list) -> int:
         all_cards = hand + community_cards
         all_cards.sort(key=lambda card: self.card_value_key(card['value']))
 
@@ -25,7 +47,16 @@ class HandEvaluator:
 
         return self.hand_rankings["High Card"]
 
-    def tiebreaker_rank(self, hand, community_cards):
+    """
+    _summary_ : Evaluate the strength of a hand.
+    _description_ : This method is used to evaluate the strength of a hand.
+    _attributes_ :
+        - hand : Hand of the player.
+        - community_cards : Community cards.
+    _returns_ : Strength of the hand.
+    """
+
+    def tiebreaker_rank(self, hand: list, community_cards: list) -> int:
         all_cards = hand + community_cards
         all_cards.sort(key=lambda card: self.card_value_key(card['value']))
 
@@ -39,30 +70,62 @@ class HandEvaluator:
 
         return tiebreaker_rank
 
-    def card_value_key(self, value):
+    """
+    _summary_ : Get the key of a card value.
+    _description_ : This method is used to get the key of a card value.
+    _attributes_ :
+        - value : Value of the card.
+    _returns_ : Key of the card value.
+    """
+
+    def card_value_key(self, value: str) -> int:
         # Define the custom order of card values
         value_order = ["2", "3", "4", "5", "6", "7", "8",
                        "9", "10", "Jack", "Queen", "King", "Ace"]
         return value_order.index(value)
 
-    def is_royal_flush(self, cards):
+    """
+    _summary_ : Check if the hand is a royal flush.
+    _description_ : This method is used to check if the hand is a royal flush.
+    _attributes_ :
+        - cards : Cards of the player.
+    _returns_ : True if the hand is a royal flush, False otherwise.
+    """
+
+    def is_royal_flush(self, cards: list) -> bool:
         return self.is_straight_flush(cards) and self.has_ace_high(cards)
 
-    def is_straight_flush(self, cards):
+    """
+    _summary_ : Check if the hand is a straight flush.
+    _description_ : This method is used to check if the hand is a straight flush.
+    _attributes_ :
+        - cards : Cards of the player.
+    _returns_ : True if the hand is a straight flush, False otherwise.
+    """
+
+    def is_straight_flush(self, cards: list) -> bool:
         return self.is_straight(cards) and self.is_flush(cards)
 
-    def is_four_of_a_kind(self, cards):
+    """
+    _summary_ : Check if the hand is a four of a kind.
+    _description_ : This method is used to check if the hand is a four of a kind.
+    _attributes_ :
+        - cards : Cards of the player.
+    _returns_ : True if the hand is a four of a kind, False otherwise.
+    """
+
+    def is_four_of_a_kind(self, cards: list) -> bool:
         value_counts = self.get_value_counts(cards)
         return any(count >= 4 for count in value_counts.values())
 
-    def is_full_house(self, cards):
+    def is_full_house(self, cards: list) -> bool:
         value_counts = self.get_value_counts(cards)
         return any(count >= 3 for count in value_counts.values()) and len(value_counts) == 2
 
-    def is_flush(self, cards):
+    def is_flush(self, cards: list) -> bool:
         return all(card['suit'] == cards[0]['suit'] for card in cards)
 
-    def is_straight(self, cards):
+    def is_straight(self, cards: list) -> bool:
         value_counts = self.get_value_counts(cards)
         if len(value_counts) < 5:
             return False
@@ -77,18 +140,26 @@ class HandEvaluator:
             return True
         return False
 
-    def is_three_of_a_kind(self, cards):
+    def is_three_of_a_kind(self, cards: list) -> bool:
         value_counts = self.get_value_counts(cards)
         return any(count >= 3 for count in value_counts.values())
 
-    def is_two_pairs(self, cards):
+    def is_two_pairs(self, cards: list) -> bool:
         value_counts = self.get_value_counts(cards)
         pairs = [value for value, count in value_counts.items() if count >= 2]
         return len(pairs) >= 2
 
-    def is_one_pair(self, cards):
+    def is_one_pair(self, cards: list) -> bool:
         value_counts = self.get_value_counts(cards)
         return any(count >= 2 for count in value_counts.values())
+
+    """ 
+    _summary_ : Get the value counts.
+    _description_ : This method is used to get the value counts.
+    _attributes_ :
+        - cards : Cards of the player.  
+    _returns_ : Value counts.
+    """
 
     def get_value_counts(self, cards):
         value_counts = {}
@@ -97,7 +168,15 @@ class HandEvaluator:
             value_counts[value] = value_counts.get(value, 0) + 1
         return value_counts
 
-    def has_ace_high(self, cards):
+    """
+    _summary_ : Check if the hand has an ace high.
+    _description_ : This method is used to check if the hand has an ace high.
+    _attributes_ :
+        - cards : Cards of the player.
+    _returns_ : True if the hand has an ace high, False otherwise.
+    """
+
+    def has_ace_high(self, cards: list) -> bool:
         return any(card['value'] == 'Ace' for card in cards)
 
 

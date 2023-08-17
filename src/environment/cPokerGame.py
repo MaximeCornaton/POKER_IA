@@ -1,6 +1,8 @@
-import json
-import random
+# Description: This file contains the PokerGame class.
+# Author: Maxime Cornaton
+# Date: 2023
 
+import random
 
 from environment.cPlayer import Player
 from environment.cHandEvaluator import HandEvaluator
@@ -9,7 +11,18 @@ from environment.ePlayerAction import PlayerAction
 
 
 class PokerGame:
-    def __init__(self, num_players, small_blind, big_blind, max_rounds):
+    """
+    _summary_ : Class used to create a poker game.
+    _description_ : This class is used to create a poker game.
+    _attributes_ :  
+        - num_players : Number of players in the game.
+        - small_blind : Small blind amount.
+        - big_blind : Big blind amount.
+        - max_rounds : Maximum number of rounds.
+    _returns_ : None
+    """
+
+    def __init__(self, num_players: int, small_blind: int, big_blind: int, max_rounds: int) -> None:
         self.num_players = num_players
 
         self.small_blind = small_blind
@@ -17,41 +30,101 @@ class PokerGame:
 
         self.max_rounds = max_rounds
 
-    def init(self, agent):
+    """
+    _summary_ : Initialize the game.
+    _description_ : This method is used to initialize the game.
+    _attributes_ :
+        - agent : Agent used to play the game.
+    _returns_ : None
+    """
+
+    def init(self, agent) -> None:
         self.players = self.generate_players(agent)
         self.history = History()
         self.reset()
 
-    def reset(self):
+    """
+    _summary_ : Reset the game.
+    _description_ : This method is used to reset the game.
+    _attributes_ : None
+    _returns_ : None
+    """
+
+    def reset(self) -> None:
         self.pot = 0
         self.community_cards = []
         self.deck = self.generate_deck()
         self.reset_players_hands()
         self.history.reset()
 
-    def reset_players_hands(self):
+    """
+    _summary_ : Reset the players' hands.
+    _description_ : This method is used to reset the players' hands.
+    _attributes_ : None
+    _returns_ : None    
+    """
+
+    def reset_players_hands(self) -> None:
         for player in self.players:
             player.hand = []
 
-    def generate_players(self, agent):
+    """
+    _summary_ : Generate the players.
+    _description_ : This method is used to generate the players.
+    _attributes_ :
+        - agent : Agent used to play the game.
+    _returns_ : List of players 
+    """
+
+    def generate_players(self, agent) -> list:
         return [Player(agent=agent, name="Player_"+str(_)) for _ in range(self.num_players)]
 
-    def generate_deck(self):
+    """
+    _summary_ : Generate the deck.
+    _description_ : This method is used to generate the deck.
+    _attributes_ : None
+    _returns_ : List of cards
+    """
+
+    def generate_deck(self) -> list:
         suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
         values = ['2', '3', '4', '5', '6', '7', '8',
                   '9', '10', 'Jack', 'Queen', 'King', 'Ace']
         return [{'suit': suit, 'value': value} for suit in suits for value in values]
 
-    def deal_cards(self):
+    """
+    _summary_ : Deal the cards.
+    _description_ : This method is used to deal the cards.
+    _attributes_ : None
+    _returns_ : None
+    """
+
+    def deal_cards(self) -> None:
         random.shuffle(self.deck)
         for player in self.players:
             player.hand = [self.deck.pop(), self.deck.pop()]
 
-    def deal_community_cards(self, num_cards):
+    """
+    _summary_ : Deal the community cards.
+    _description_ : This method is used to deal the community cards.
+    _attributes_ :
+        - num_cards : Number of cards to deal.
+    _returns_ : None
+    """
+
+    def deal_community_cards(self, num_cards: int) -> None:
         for _ in range(num_cards):
             self.community_cards.append(self.deck.pop())
 
-    def play_round(self, round_num):
+    """
+    _summary_ : Play a round.
+    _description_ : This method is used to play a round.
+    _attributes_ :
+        - round_num : Round number. 
+    _returns_ : None
+    """
+
+    def play_round(self, round_num: int) -> None:
         if round_num == self.max_rounds:
             return
 
@@ -80,15 +153,36 @@ class PokerGame:
         self.rotate_players()
         self.play_round(round_num + 1)
 
-    def blind_bets(self):
+    """
+    _summary_ : Make the blind bets.
+    _description_ : This method is used to make the blind bets.
+    _attributes_ : None
+    _returns_ : None
+    """
+
+    def blind_bets(self) -> None:
         self.players[0].bet(self.small_blind)
         self.players[1].bet(self.big_blind)
         self.pot += self.small_blind + self.big_blind
 
-    def rotate_players(self):
+    """
+    _summary_ : Rotate the players.
+    _description_ : This method is used to rotate the players.
+    _attributes_ : None
+    _returns_ : None
+    """
+
+    def rotate_players(self) -> None:
         self.players = self.players[1:] + self.players[:1]
 
-    def play(self):
+    """
+    _summary_ : Play the game.
+    _description_ : This method is used to play the game.
+    _attributes_ : None
+    _returns_ : List of winners
+    """
+
+    def play(self) -> list:
         self.deal_cards()
         self.play_round(0)
 
@@ -99,13 +193,35 @@ class PokerGame:
 
         return winners
 
-    def save_history(self, path):
+    """
+    _summary_ : Save the history.
+    _description_ : This method is used to save the history.
+    _attributes_ :
+        - path : Path to save the history.
+    _returns_ : None
+    """
+
+    def save_history(self, path) -> None:
         self.history.save(path)
 
-    def get_history(self):
-        return self.history.get()
+    """
+    _summary_ : Get the history.
+    _description_ : This method is used to get the history.
+    _attributes_ : None
+    _returns_ : History
+    """
 
-    def determine_winner(self):
+    def get_history(self) -> dict:
+        return self.history
+
+    """
+    _summary_ : Determine the winner.
+    _description_ : This method is used to determine the winner.
+    _attributes_ : None
+    _returns_ : List of winners
+    """
+
+    def determine_winner(self) -> list:
         hand_evaluator = HandEvaluator()
         best_hand_strength = -1
         winning_players = []
@@ -129,7 +245,14 @@ class PokerGame:
 
         return winning_players
 
-    def get_state(self):
+    """
+    _summary_ : Get the state.
+    _description_ : This method is used to get the state.
+    _attributes_ : None
+    _returns_ : State
+    """
+
+    def get_state(self) -> dict:
         return {
             'player_hands': [player.hand for player in self.players],
             'community_cards': self.community_cards,
@@ -139,5 +262,5 @@ class PokerGame:
             'big_blind': self.big_blind,
         }
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"Players: {self.players}\nPot: {self.pot}\nCommunity Cards: {self.community_cards}"

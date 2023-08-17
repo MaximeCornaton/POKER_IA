@@ -1,11 +1,31 @@
+# Description: History class for saving the history of the game
+# Author: Maxime Cornaton
+# Date: 2023
+
 import json
 
 
 class History:
-    def __init__(self):
+
+    """
+    _summary_ : Class used to save the history of the game.
+    _description_ : This class is used to save the history of the game.
+    _attributes_ :
+        - history : History of the game.
+    _returns_ : None
+    """
+
+    def __init__(self) -> None:
         self.reset()
 
-    def reset(self):
+    """
+    _summary_ : Reset the history.
+    _description_ : This method is used to reset the history.
+    _attributes_ : None
+    _returns_ : None
+    """
+
+    def reset(self) -> None:
         self.history = {
             'states': [],
             'players': [],
@@ -13,19 +33,42 @@ class History:
             'amounts': [],
         }
 
-    def add(self, state, player, action, amount):
+    """
+    _summary_ : Add a new entry to the history.
+    _description_ : This method is used to add a new entry to the history.
+    _attributes_ :
+        - state : State of the game.
+        - player : Player who made the action.
+        - action : Action made by the player.
+        - amount : Amount of the action.
+    _returns_ : None
+    """
+
+    def add(self, state, player, action, amount: int) -> None:
         self.history['states'].append(state)
         self.history['players'].append(player)
         self.history['actions'].append(action)
         self.history['amounts'].append(amount)
 
-    def get(self):
-        return self.history['states'], self.history['actions'], self.history['amounts']
+    """ 
+    _summary_ : Get the history.
+    _description_ : This method is used to get the history.
+    _attributes_ : None
+    _returns_ : History of the game.
+    """
 
-    def get_players_and_amounts(self):
-        return self.history['players'], self.history['amounts']
+    def get(self) -> dict:
+        return self.history['states'], self.history['players'], self.history['actions'], self.history['amounts']
 
-    def save(self, path):
+    """
+    _summary_ : Save the history.
+    _description_ : This method is used to download the history.
+    _attributes_ :
+        - path : Path to save the history.
+    _returns_ : None
+    """
+
+    def save(self, path: str) -> None:
         history = {
             'states': self.history['states'],
             'player': [str(player) for player in self.history['players']],

@@ -1,6 +1,7 @@
 from agent.cAgent import Agent
 from environment.cPokerGame import PokerGame
-from utils.config_loader import load_config
+from utils.config_manager import load_config
+from utils.reward_manager import calculate_reward
 
 
 def main():
@@ -30,12 +31,13 @@ def main():
         environment.init(agent=agent)
         winners = environment.play()
 
-        print(
-            f"Episode {id} finished. Winners: {', '.join(str(winner) for winner in winners)}")
         environment.save_history(f"history_{id}.json")
 
-        states, actions, rewards = environment.get_history()
-        # agent.train(states, actions, rewards)
+        history = environment.get_history()
+
+        data = calculate_reward(history, winners)
+
+        # agent.train(states, actions, amounts)
 
         environment.reset()
 
