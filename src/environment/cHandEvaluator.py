@@ -118,12 +118,36 @@ class HandEvaluator:
         value_counts = self.get_value_counts(cards)
         return any(count >= 4 for count in value_counts.values())
 
+    """
+    _summary_ : Check if the hand is a full house.
+    _description_ : This method is used to check if the hand is a full house.
+    _attributes_ :
+        - cards : Cards of the player.
+    _returns_ : True if the hand is a full house, False otherwise.
+    """
+
     def is_full_house(self, cards: list) -> bool:
         value_counts = self.get_value_counts(cards)
         return any(count >= 3 for count in value_counts.values()) and len(value_counts) == 2
 
+    """
+    _summary_ : Check if the hand is a flush.
+    _description_ : This method is used to check if the hand is a flush.
+    _attributes_ :
+        - cards : Cards of the player.
+    _returns_ : True if the hand is a flush, False otherwise.
+    """
+
     def is_flush(self, cards: list) -> bool:
         return all(card['suit'] == cards[0]['suit'] for card in cards)
+
+    """
+    _summary_ : Check if the hand is a straight.    
+    _description_ : This method is used to check if the hand is a straight.
+    _attributes_ :
+        - cards : Cards of the player.  
+    _returns_ : True if the hand is a straight, False otherwise.
+    """
 
     def is_straight(self, cards: list) -> bool:
         value_counts = self.get_value_counts(cards)
@@ -140,14 +164,38 @@ class HandEvaluator:
             return True
         return False
 
+    """
+    _summary_ : Check if the hand is a three of a kind.
+    _description_ : This method is used to check if the hand is a three of a kind.
+    _attributes_ :
+        - cards : Cards of the player.
+    _returns_ : True if the hand is a three of a kind, False otherwise.
+    """
+
     def is_three_of_a_kind(self, cards: list) -> bool:
         value_counts = self.get_value_counts(cards)
         return any(count >= 3 for count in value_counts.values())
+
+    """
+    _summary_ : Check if the hand is two pairs.
+    _description_ : This method is used to check if the hand is two pairs.
+    _attributes_ :
+        - cards : Cards of the player.
+    _returns_ : True if the hand is two pairs, False otherwise.
+    """
 
     def is_two_pairs(self, cards: list) -> bool:
         value_counts = self.get_value_counts(cards)
         pairs = [value for value, count in value_counts.items() if count >= 2]
         return len(pairs) >= 2
+
+    """
+    _summary_ : Check if the hand is one pair.
+    _description_ : This method is used to check if the hand is one pair.
+    _attributes_ :
+        - cards : Cards of the player.
+    _returns_ : True if the hand is one pair, False otherwise.
+    """
 
     def is_one_pair(self, cards: list) -> bool:
         value_counts = self.get_value_counts(cards)
@@ -161,7 +209,7 @@ class HandEvaluator:
     _returns_ : Value counts.
     """
 
-    def get_value_counts(self, cards):
+    def get_value_counts(self, cards: list) -> dict:
         value_counts = {}
         for card in cards:
             value = card['value']

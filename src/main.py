@@ -37,7 +37,7 @@ def main():
 
         data = calculate_reward(history, winners)
 
-        # agent.train(states, actions, amounts)
+        # agent.train(data)
 
         environment.reset()
 

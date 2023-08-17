@@ -38,7 +38,7 @@ class PokerGame:
     _returns_ : None
     """
 
-    def init(self, agent) -> None:
+    def init(self, agent: object) -> None:
         self.players = self.generate_players(agent)
         self.history = History()
         self.reset()
@@ -72,11 +72,11 @@ class PokerGame:
     _summary_ : Generate the players.
     _description_ : This method is used to generate the players.
     _attributes_ :
-        - agent : Agent used to play the game.
+        - agent : Agent used to play the game. 
     _returns_ : List of players 
     """
 
-    def generate_players(self, agent) -> list:
+    def generate_players(self, agent: object) -> list:
         return [Player(agent=agent, name="Player_"+str(_)) for _ in range(self.num_players)]
 
     """
