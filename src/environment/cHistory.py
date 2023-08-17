@@ -4,6 +4,10 @@
 
 import json
 
+from environment.cPlayer import Player
+from environment.ePlayerAction import PlayerAction
+from utils.helpers import save_json
+
 
 class History:
 
@@ -26,29 +30,50 @@ class History:
     """
 
     def reset(self) -> None:
-        self.history = {
-            'states': [],
-            'players': [],
-            'actions': [],
-            'amounts': [],
-        }
+        self.history = [
+            # {
+            #     'round': 0,
+            #     'big_blind': 0,
+            #     'small_blind': 0,
+            #     'pot': 0,
+            #     'community_cards': [],
+            #     'players_state': [
+            #         {
+            #             'player': Player,
+            #             'stack': 0,
+            #             'cards': []
+            #         },
+            #     ],
+            #     'events': [
+            #         {
+            #             'player': Player,
+            #             'action': PlayerAction,
+            #             'amount': 0
+            #         },
+            #     ]
+
+            # },
+        ]
 
     """
     _summary_ : Add a new entry to the history.
     _description_ : This method is used to add a new entry to the history.
     _attributes_ :
+        - round : Round of the game.
         - state : State of the game.
-        - player : Player who made the action.
-        - action : Action made by the player.
-        - amount : Amount of the action.
-    _returns_ : None
+        - decision : Decision of the players
     """
 
-    def add(self, state, player, action, amount: int) -> None:
-        self.history['states'].append(state)
-        self.history['players'].append(player)
-        self.history['actions'].append(action)
-        self.history['amounts'].append(amount)
+    def add(self, round: int, state: dict, events: dict) -> None:
+        self.history.append({
+            'round': round,
+            'big_blind': state['big_blind'],
+            'small_blind': state['small_blind'],
+            'pot': state['pot'],
+            'community_cards': state['community_cards'].copy(),
+            'players_state': state['players_state'].copy(),
+            'events': events
+        })
 
     """ 
     _summary_ : Get the history.
@@ -58,7 +83,7 @@ class History:
     """
 
     def get(self) -> dict:
-        return self.history['states'], self.history['players'], self.history['actions'], self.history['amounts']
+        return self.history
 
     """
     _summary_ : Save the history.
@@ -69,12 +94,4 @@ class History:
     """
 
     def save(self, path: str) -> None:
-        history = {
-            'states': self.history['states'],
-            'player': [str(player) for player in self.history['players']],
-            'actions': [action.name for action in self.history['actions']],
-            'amounts': self.history['amounts'],
-        }
-
-        with open(path, 'w') as f:
-            json.dump(history, f, indent=2)
+        save_json(self.history, path)

@@ -129,6 +129,8 @@ class PokerGame:
             return
 
         round_min_bet = 0
+        state = self.get_state()
+        events = []
 
         if round_num == 0:
             self.blind_bets()
@@ -146,8 +148,13 @@ class PokerGame:
 
             round_min_bet = max(round_min_bet, amount)
 
-            self.history.add(state=self.get_state(), player=player,
-                             action=decision, amount=amount)
+            events.append({
+                'player': player,
+                'action': decision,
+                'amount': amount
+            })
+
+        self.history.add(round_num, state, events)
 
         self.deal_community_cards(3 if round_num == 0 else 1)
         self.rotate_players()
@@ -201,18 +208,8 @@ class PokerGame:
     _returns_ : None
     """
 
-    def save_history(self, path) -> None:
+    def save_history(self, path: str) -> None:
         self.history.save(path)
-
-    """
-    _summary_ : Get the history.
-    _description_ : This method is used to get the history.
-    _attributes_ : None
-    _returns_ : History
-    """
-
-    def get_history(self) -> dict:
-        return self.history
 
     """
     _summary_ : Determine the winner.
@@ -254,13 +251,19 @@ class PokerGame:
 
     def get_state(self) -> dict:
         return {
-            'player_hands': [player.hand for player in self.players],
-            'community_cards': self.community_cards,
-            'player_stacks': [player.chips for player in self.players],
-            'pot': self.pot,
-            'small_blind': self.small_blind,
             'big_blind': self.big_blind,
+            'small_blind': self.small_blind,
+            'pot': self.pot,
+            'community_cards': self.community_cards,
+            'players_state': self.get_players_state(),
         }
+
+    def get_players_state(self) -> list:
+        return [{
+            'player': player,
+            'stack': player.chips,
+            'cards': player.hand
+        } for player in self.players]
 
     def __str__(self) -> str:
         return f"Players: {self.players}\nPot: {self.pot}\nCommunity Cards: {self.community_cards}"
