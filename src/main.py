@@ -1,7 +1,7 @@
 from agent.cAgent import Agent
 from environment.cPokerGame import PokerGame
 from utils.config_manager import load_config
-from utils.reward_manager import create_game_data
+from utils.preprocessing import preprocess_game_data
 from utils.helpers import save_json
 
 
@@ -34,8 +34,8 @@ def main():
 
         environment.save_history(f"data/games/game_{id}.json")
 
-        data = create_game_data(environment, winners)
-        save_json(data, f"data/rewards/rewards_{id}.json")
+        data = preprocess_game_data(environment, winners)
+        save_json(data, f"data/processed/game_{id}.json")
 
         agent.train(data)
 
