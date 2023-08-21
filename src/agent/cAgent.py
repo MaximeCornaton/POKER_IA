@@ -1,6 +1,7 @@
 import torch
 import torch.optim as optim
 from model.cModel import NeuralNetwork
+from utils.preprocessing import prepare_input
 
 
 class Agent:
@@ -8,15 +9,14 @@ class Agent:
         self.model = NeuralNetwork(input_size, hidden_size, output_size)
         self.optimizer = optim.Adam(self.model.parameters(), lr=learning_rate)
 
-    def train(self, preprocessed_data: dict) -> None:
+    def train(self, data: dict, rewards: dict) -> None:
 
-        input_data = torch.stack(preprocessed_data, dim=0)
-        output = self.model(input_data)
+        output = self.model(prepare_input(data))
 
         round_rewards = torch.tensor(
-            preprocessed_data['round_rewards'], dtype=torch.float)
+            rewards['round_rewards'], dtype=torch.float)
         game_rewards = torch.tensor(
-            preprocessed_data['game_rewards'], dtype=torch.float)
+            rewards['game_rewards'], dtype=torch.float)
 
         loss = self.calculate_loss(output, round_rewards, game_rewards)
 

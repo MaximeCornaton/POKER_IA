@@ -34,10 +34,10 @@ def main():
 
         environment.save_history(f"data/games/game_{id}.json")
 
-        data = preprocess_game_data(environment, winners)
+        data, rewards = preprocess_game_data(environment, winners)
         save_json(data, f"data/processed/game_{id}.json")
 
-        agent.train(data)
+        agent.train(data, rewards)
 
         environment.reset()
 
